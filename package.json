@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "webpack serve",
     "build": "rm -rf dist && webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,6 +18,7 @@
   "devDependencies": {
     "css-loader": "^5.0.0",
     "html-webpack-plugin": "^4.5.0",
-    "style-loader": "^2.0.0"
+    "style-loader": "^2.0.0",
+    "webpack-dev-server": "^3.11.0"
   }
 }

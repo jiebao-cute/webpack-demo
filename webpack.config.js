@@ -4,7 +4,11 @@ const { title } = require('process');
 const { Template } = require('webpack');
 
 module.exports = {
-  mode: 'production',// 切换模式可选production（默认）/ development   正在开发中用development ,要发布就使用production
+  mode: 'development',// 切换模式可选production（默认）/ development   正在开发中用development ,要发布就使用production
+  devtool: 'inline-source-map',
+  devServer: {
+    contentBase: './dist',
+  },
   entry: './src/index.js',//进入哪个文件转译
   output: {
     //path: path.resolve(__dirname, 'dist'),//默认dist
