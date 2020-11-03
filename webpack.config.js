@@ -1,26 +1,16 @@
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const path = require('path');
+const base = require('./webpack.config.base.js')
 const { title } = require('process');
 const { Template } = require('webpack');
 
 module.exports = {
-  mode: 'development',// 切换模式可选production（默认）/ development   正在开发中用development ,要发布就使用production
-  devtool: 'inline-source-map',
-  devServer: {
-    contentBase: './dist',
+  ...base,
+  devtool: "inline-source-map",
+  devServer:{
+      contentBase: "./dist"
   },
-  entry: './src/index.js',//进入哪个文件转译
-  output: {
-    //path: path.resolve(__dirname, 'dist'),//默认dist
-    //filename: 'index.js',//出现在dist里被转义后的文件名
-    filename: '[name].[contenthash].js',//每次重新运行会更行dist文件
-  },
-  //添加html文件
-  plugins: [new HtmlWebpackPlugin({
-      title: '渣渣',
-      template: 'src/assets/index.html'
-  })],
-  //添加css文件
   module: {
     rules: [
       {
