@@ -19,6 +19,7 @@ module.exports = {
   //添加css文件
   module: {
     rules: [
+      ...base.module.rules,
       {
         test: /\.css$/i,//正则表达式，如果文件以.CSS结尾就使用下面的use
         //将css抽成文件
